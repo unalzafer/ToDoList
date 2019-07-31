@@ -23,17 +23,20 @@ public class LoginPresenter implements LoginView.LoginPresenter {
 
         //örnek olabilecek giriş senaryoları kontrolü biz basit bişeyler yaptık
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(mView.getContext(),"Lütfen emailinizi giriniz",Toast.LENGTH_SHORT).show();
+            mView.onLoginError("Lütfen emailinizi giriniz.");
             return;
         }
         else if (!email.contains("@")) {
-            Toast.makeText(mView.getContext(), "Lütfen geçerli bir mail adresi giriniz", Toast.LENGTH_SHORT).show();
+            mView.onLoginError("Lütfen geçerli bir mail adresi giriniz.");
+            return;
         }
         else if(TextUtils.isEmpty(password)){
-            Toast.makeText(mView.getContext(),"Lütfen parolanızı giriniz",Toast.LENGTH_SHORT).show();
+            mView.onLoginError("Lütfen parolanızı giriniz.");
+            return;
         }
         else if (password.length()<6){
-            Toast.makeText(mView.getContext(),"Parola en az 6 haneli olmalıdır",Toast.LENGTH_SHORT).show();
+            mView.onLoginError("Parola en az 6 haneli olmalıdır.");
+            return;
         }else {
             //Firebase ile bağlantıyı kurup mail ve şifre doğrulaması yapılır ve sonra giriş yapılır veya yapılmaz
             //Eğer işlem başarılı olursa task.isSuccessful true

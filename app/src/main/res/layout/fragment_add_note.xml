@@ -48,8 +48,7 @@
                         android:ems="10"
                         android:hint="Not Başlığı Giriniz"
                         android:inputType="textPersonName"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:textColor="@color/black" />
 
                     <EditText
                         android:id="@+id/etText"
@@ -63,8 +62,7 @@
                         android:inputType="textMultiLine"
                         android:minHeight="120dp"
                         android:minLines="5"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:textColor="@color/black" />
 
                     <EditText
                         android:id="@+id/etDate"
@@ -76,8 +74,7 @@
                         android:focusable="false"
                         android:hint="@string/select_a_date"
                         android:inputType="date"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black" />
+                        android:textColor="@color/black"/>
 
                     <LinearLayout
                         android:id="@+id/ll_colors"
@@ -195,6 +192,15 @@
                         android:layout_marginLeft="10dp"
                         android:background="@drawable/edittext_login_form"
                         app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                    <ImageView
+                        android:id="@+id/ivShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_login_form"
+                        app:srcCompat="@android:drawable/ic_menu_share" />
 
                 </LinearLayout>
 

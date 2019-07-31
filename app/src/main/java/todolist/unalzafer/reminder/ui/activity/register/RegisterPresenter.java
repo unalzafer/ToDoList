@@ -22,20 +22,20 @@ public class RegisterPresenter implements RegisterView.Presenter {
         auth=FirebaseAuth.getInstance();
         //örnek olabilecek giriş senaryoları kontrolü biz basit bişeyler yaptık
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(mView.getContext(),"Lütfen emailinizi giriniz",Toast.LENGTH_SHORT).show();
+            mView.onError("Lütfen emailinizi giriniz");
             return;
         }
         else if (!email.contains("@")) {
-            Toast.makeText(mView.getContext(), "Lütfen geçerli bir mail adresi giriniz", Toast.LENGTH_SHORT).show();
+            mView.onError("Lütfen geçerli bir mail adresi giriniz"); return;
         }
         else if(TextUtils.isEmpty(password)){
-            Toast.makeText(mView.getContext(),"Lütfen parolanızı giriniz",Toast.LENGTH_SHORT).show();
+            mView.onError("Lütfen parolanızı giriniz"); return;
         }
         else if(!password.equals(password2)){
-            Toast.makeText(mView.getContext(),"Parolalarınız Eşleşmiyor.",Toast.LENGTH_SHORT).show();
+            mView.onError("Parolalarınız Eşleşmiyor."); return;
         }
         else if (password.length()<6){
-            Toast.makeText(mView.getContext(),"Parola en az 6 haneli olmalıdır",Toast.LENGTH_SHORT).show();
+            mView.onError("Parola en az 6 haneli olmalıdır"); return;
         }else {
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

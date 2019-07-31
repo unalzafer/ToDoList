@@ -74,6 +74,7 @@ public class RegisterActivity extends BaseActivity implements RegisterView.View 
 
     @Override
     public void onError(String message) {
-
+        hideProgress();
+        showAlert("Dikkat",message);
     }
 }

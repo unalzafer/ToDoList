@@ -3,6 +3,7 @@ package todolist.unalzafer.reminder.ui.fragment.addNote;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -315,5 +316,14 @@ public class AddNoteFragment extends BaseFragment implements AddNoteView.View {
             tvState.setText("Tamamlandı");
         else
             tvState.setText("Tamamlanmadı");
+    }
+
+    @OnClick(R.id.ivShare)
+    public void shareMore(){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, etTitle.getText().toString()+"\n\n"+etText.getText().toString());
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }

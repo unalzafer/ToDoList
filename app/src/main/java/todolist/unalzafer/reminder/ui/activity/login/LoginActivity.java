@@ -87,11 +87,13 @@ public class LoginActivity extends BaseActivity implements LoginView.View {
 
     @Override
     public void onLoginError(String message) {
+        hideProgress();
         showAlert("Giriş Başarısız",message);
     }
 
     @Override
     public void onError(String errMsg) {
+        hideProgress();
         showAlert("Hata",errMsg);
     }
 }

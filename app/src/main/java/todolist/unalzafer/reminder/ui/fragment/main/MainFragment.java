@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -47,6 +48,8 @@ public class MainFragment extends BaseFragment implements MainFragmentView.View 
     TextView tvAppBar;
     @BindView(R.id.tvSignOut)
     TextView tvSignOut;
+    @BindView(R.id.nothingCell)
+    ConstraintLayout nothingCell;
 
     NoteAdapter adapter;
     MainFragmentView.Presenter presenter;
@@ -114,6 +117,7 @@ public class MainFragment extends BaseFragment implements MainFragmentView.View 
         });
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
+        setAdapters(notesModels.size());
         hideProgress();
     }
 
@@ -124,5 +128,13 @@ public class MainFragment extends BaseFragment implements MainFragmentView.View 
         //getFragmentManager().popBackStack();
         startActivity(new Intent(getActivity(), LoginActivity.class));
         getActivity().finish();
+    }
+
+    public void setAdapters(int size){
+        if(size>0){
+            nothingCell.setVisibility(View.GONE);
+        }else {
+            nothingCell.setVisibility(View.VISIBLE);
+        }
     }
 }

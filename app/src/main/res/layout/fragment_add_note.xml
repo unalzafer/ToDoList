@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragment.addNote.AddNoteFragment">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:background="@drawable/layout_form_background"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_login_form"
+                        android:ems="10"
+                        android:hint="Not Başlığı Giriniz"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                    <EditText
+                        android:id="@+id/etText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_login_form"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:hint="Not Detayı Giriniz"
+                        android:inputType="textMultiLine"
+                        android:minHeight="120dp"
+                        android:minLines="5"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                    <EditText
+                        android:id="@+id/etDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_login_form"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:hint="@string/select_a_date"
+                        android:inputType="date"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_colors"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edittext_login_form"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/ibColorBlue"
+                            android:layout_width="@dimen/noteAddColorSize"
+                            android:layout_height="@dimen/noteAddColorSize"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRandom1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_checked" />
+
+                        <ImageButton
+                            android:id="@+id/ibColorPurble"
+                            android:layout_width="@dimen/noteAddColorSize"
+                            android:layout_height="@dimen/noteAddColorSize"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRandom2"
+                            android:scaleType="fitCenter" />
+
+                        <ImageButton
+                            android:id="@+id/ibColorGreen"
+                            android:layout_width="@dimen/noteAddColorSize"
+                            android:layout_height="@dimen/noteAddColorSize"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRandom3"
+                            android:scaleType="fitCenter" />
+
+                        <ImageButton
+                            android:id="@+id/ibColorOrange"
+                            android:layout_width="@dimen/noteAddColorSize"
+                            android:layout_height="@dimen/noteAddColorSize"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRandom4"
+                            android:scaleType="fitCenter" />
+
+                        <ImageButton
+                            android:id="@+id/ibColorRed"
+                            android:layout_width="@dimen/noteAddColorSize"
+                            android:layout_height="@dimen/noteAddColorSize"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRandom5"
+                            android:scaleType="fitCenter" />
+
+                        <ImageButton
+                            android:id="@+id/ibColorPink"
+                            android:layout_width="@dimen/noteAddColorSize"
+                            android:layout_height="@dimen/noteAddColorSize"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorRandom6"
+                            android:scaleType="fitCenter" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btSaveNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/edittext_login_form"
+                        android:padding="20dp"
+                        android:text="Kaydet"
+                        android:textStyle="bold"
+                        tools:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/ivSync"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edittext_login_form"
+                        android:visibility="gone"
+                        android:layout_marginRight="10dp"
+                        app:srcCompat="@android:drawable/ic_menu_save" />
+
+                    <ImageView
+                        android:id="@+id/ivUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/edittext_login_form"
+                        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+                    <ImageView
+                        android:id="@+id/ivDelete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/edittext_login_form"
+                        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_horizontal"
+                    android:text="Durum"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

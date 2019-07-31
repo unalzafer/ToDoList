@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#7200da</color>
+    <color name="colorAccent">#000000</color>
+    <color name="colorDoit">#7200da</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorOrange">#fb684b</color>
+    <color name="colorDoList">#4a4a4a</color>
+    <color name="colorProfile">#d4a5ff</color>
+    <color name="colorBox">#e5e5e5</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="hintColor">#A8A8A8</color>
+    <color name="black">#000000</color>
+    <color name="colorFont">#ffffff</color>
+
+    <color name="colorRandom1">#3478f5</color>
+    <color name="colorRandom2">#5756ce</color>
+    <color name="colorRandom3">#76d672</color>
+    <color name="colorRandom4">#f19b38</color>
+    <color name="colorRandom5">#eb4e3d</color>
+    <color name="colorRandom6">#eb435a</color>
+</resources>
